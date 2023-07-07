@@ -1,0 +1,100 @@
+->Travis CI is a hosted, distributed continuous integration service used to build and test projects hosted at GitHub. Travis CI automatically detects when a commit has been made and pushed to a GitHub repository that is using Travis CI, and each time this happens, it will try to build the project and run tests. This includes commits to all branches, not just to the master branch.
+
+
+-> The simplest way to explain Travis CI is that it runs your program's tests every time you commit to GitHub (this can be configured in many ways, and you can always disable builds on some branches). The point of this is that you can often discover very quickly if your commit broke something, and fix it before it becomes a problem. I would recommend running Travis CI on every GitHub repo that you have unit tests in and is using a programming language supported by Travis CI. Since setting up Travis CI is very easy, I don't normally see a good reason not to use it, unless you don't care if you have passing tests in your program or not.
+
+
+-> n the .travis.yml a file you're specifying your OS, the programming language, your repo branch, the project file name and other details. By reading this file, Travis-CI will use the specific compilers which installed on their server to compile our code. Probably they will have the same mechanism as we have for Github.
+
+-> Not a big deal. But what benefits you will be missing by not using this easy to integrate engine with your repo. Everytime you commit it may possible that it miss something and it couldn't compile because of a code. How will you know? Thus, you should use Travis-CI.
+
+link https://stackoverflow.com/questions/22587148/trying-to-understand-what-travis-ci-does-and-when-it-should-be-used
+https://docs.travis-ci.com/user/for-beginners/
+
+
+-> Key Difference between Travis CI and Jenkins:
+-Travis CI is a commercial CI tool, whereas Jenkins is an open-source tool.
+-Travis CI takes very less time to get started, while Jenkins needs elaborate setup.
+-Travis CI offers less customization option, whereas Jenkins offers vast customization options.
+-Travis CI has a YAML configuration file, whereas Jenkins provides a full configuration option to the user.
+
+->What is Travis CI?
+Travis CI was the first CI as a Service tool. It introduced a new approach to building code in the cloud. This CI tool allows the user to sign up, link their repository, build, as well as test their apps.
+
+Travis CI tool can easily integrate with the common cloud repositories like GitHub and Bitbucket. It offers many automated CI options which cut out the need for a dedicated server as the Travis CI server is hosted in the cloud. This allows you to test in different environments, on various machines, running on different Operating Systems.
+
+Travis CI is free for open source projects. For commercial projects, you need to purchase an enterprise plan.
+
+
+# What is Jenkins?
+Jenkins is an award-winning continuous integration tool that monitors executions of deployment cycles. It started as a side project by Sun’s software engineers group. Later it was expanded as one of the popular open source CI tools which help software development teams to automate their deployments.
+
+Jenkins is a Java-based tool, which means you only need Java Runtime Environment to operate it. Hence, Jenkins can be installed on any operating system where Java runs.
+
+In this tool, Developers can also specify conditions for customized builds. Jenkins supports a massive plugin archive. This allows developers to alter how Jenkin looks and operates.
+
+Moreover, the Jenkins Pipeline suite of plugins comes with special tools that allow developers to model easy-to-complex delivery pipelines using DSL (Domain Specific Language) method.
+
+
+-> Travis CI Features:
+Automatic integration with GitHub
+Repository access to build pull requests
+Support for 21 languages like Android, C, C#, C++, Java, JavaScript (with Node.js), Perl, PHP, Python, R, Ruby, etc
+Pre-installed build & test tools
+Available services – databases, message queues, etc.
+Deployment to multiple cloud services
+Encrypt secure environment variables or files
+Virtual machines recreated after every build
+CLI client and API for scripting
+Comes with free cloud-based hosting which does not require maintenance or administration.
+
+
+-> Jenkin Features:
+Easy to install, upgrade, and configure
+Distributed Builds
+Monitoring external jobs
+More than 600 plugins to customize your Jenkins environment
+Over 1000+ public repositories on Github, 500+ contributors, strong commit activity
+Support for various authentication methods, version control systems, notification, etc.
+Jenkins provides remote access API and its functionalities.
+Provide Powerful CI/CD tool for big projects
+It supports various job models like Freestyle, Pipeline, etc.,
+Allows developers to add their extensions
+Compatible with Docker, Libvirt, Kubernetes, and many other programs.
+
+https://www.guru99.com/jenkins-vs-travis.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

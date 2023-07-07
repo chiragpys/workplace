@@ -1,0 +1,28 @@
+-> The hooks are all stored in the hooks subdirectory of the Git directory. In most projects, that’s .git/hooks. When you initialize a new repository with git init, Git populates the hooks directory with a bunch of example scripts, many of which are useful by themselves; but they also document the input values of each script.
+
+-> The pre-commit hook is run first, before you even type in a commit message. It’s used to inspect the snapshot that’s about to be committed, to see if you’ve forgotten something, to make sure tests run, or to examine whatever you need to inspect in the code.
+
+# Why Black?
+-> Let’s be honest: while we might be tempted to hold extensive discussions about how best to format our code, it’s not the best use of our time. Black allows us to offload a lot of that debate about what the optimal code format should be, and lets us focus on the code itself. ‘Blackened’ code is designed to be readable, with the smallest diffs possible.
+
+
+-> This will produce hooks that correspond with what’s in your config file. If it’s worked, you can test that Black is formatting your code correctly by making a small change to a Python file, then making a commit.
+
+link -> https://medium.com/gousto-engineering-techbrunch/automate-python-code-formatting-with-black-and-pre-commit-ebc69dcc5e03#:~:text=pre%2Dcommit%20is%20a%20Python,run%3A%20pip%20install%20pre%2Dcommit
+
+https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks#:~:text=The%20pre%2Dcommit%20hook%20is,to%20inspect%20in%20the%20code.
+
+
+
+## pre commit flake: 
+-> Flake8 can be included as a hook for pre-commit. The easiest way to get started is to add this configuration to your .pre-commit-config.yaml:
+
+-> pre-commit creates an isolated environment for hooks. To use flake8 plugins, use the additional_dependencies setting.
+
+# What is Flake8?
+->Flake8 is a Python linting tool that checks your Python codebase for errors, styling issues and complexity. The Flake8 library is built upon 3 tools:
+-PyFlakes - checks your Python codebase for errors
+-McCabe - checks your Python codebase for complexity
+-pycodestyle - checks your Python codebase for styling issues against PEP8
+
+

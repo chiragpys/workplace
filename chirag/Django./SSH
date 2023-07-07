@@ -1,0 +1,98 @@
+-> Accessing machines remotely became a necessity a long time ago and we can barely imagine how it would be if we couldn’t control computers from remote locations.
+
+-Secure Shell (SSH) for Linux-based machines.
+-Remote Desktop Protocol (RDP) for Windows-based machines.
+
+
+-> The two protocols use the client and server applications to establish a remote connection. These tools allow you to gain access and remotely manage other computers, transfer files, and do virtually anything you can do while physically sitting in front of the machine.
+
+##Prerequisites:
+-The remote computer must be turned on at all times and have a network connection.
+-The client and server applications need to be installed and enabled.
+-You need the IP address or the name of the remote machine you want to connect to.
+-You need to have the necessary permissions to access the remote computer.
+-Firewall settings need to allow the remote connection.
+
+## What is SSH?
+->Secure Shell, sometimes referred to as Secure Socket Shell, is a protocol which allows you to connect securely to a remote computer or a server by using a text-based interface.
+
+->When a secure SSH connection is established, a shell session will be started, and you will be able to manipulate the server by typing commands within the client on your local computer.
+
+->System and network administrators use this protocol the most, as well as anyone who needs to manage a computer remotely in a highly secure manner.
+
+## How Does SSH Work?
+-> In order to establish an SSH connection, you need two components: a client and the corresponding server-side component. An SSH client is an application you install on the computer which you will use to connect to another computer or a server. The client uses the provided remote host information to initiate the connection and if the credentials are verified, establishes the encrypted connection.
+
+
+link-> https://phoenixnap.com/kb/ssh-to-connect-to-remote-server-linux-or-windows.
+
+
+
+## Generating an SSH Key Pair on Ubuntu:
+
+-> To generate an SSH key pair on Ubuntu, you can use the command line interface (CLI) tool called 'ssh-keygen'. The ssh-keygen command generates two separate files: a private key and a public key, both of which are used in different ways to enable secure authentication.
+
+-> By default, ssh-keygen generates private and public RSA keys with a key size of 2048 bits. You can also specify alternative options such as DSA or ECDSA keys, different bit sizes for your key length, and adding a passphrase for extra security.
+
+-> For example, to generate an ECDSA key instead of the default RSA type with size 4096 bits and adding a passphrase for extra security:
+
+** ssh-keygen -t ecdsa -b 4096 -C "my-secure-passphrase"
+
+
+## Types of Keys:
+
+-RSA −This is one of the most common types of SSH keys.
+It uses asymmetric encryption methodology which means that it allows both encryption and decryption using separate but mathematically related keys. RSA supports various lengths including 2048-bit or 3072-bit.
+
+-DSA −Digital Signature Algorithm (DSA) is another type of asymmetric cryptography that can be used for SSH key generation. It is faster than RSA but less secure as well.
+DSA keys are usually shorter and less secure than RSA keys and they are widely used for digital signatures in the US legal system.
+
+-ECDSA −Elliptic Curve Digital Signature Algorithm (ECDSA) is a newer type of asymmetric cryptography that is faster and more secure than both RSA and DSA keys.
+
+## Adding Your Public Key to a Remote Server:
+
+#Why You Need to Add Your Public Key:
+-When you generate an SSH key pair, you create both a private and public key. The private key should always be kept secure and should never be shared with anyone.
+
+-However, the public key can be shared with remote servers in order to authenticate your connection. When you connect to a server that has been set up for SSH authentication, it will ask for your public key.
+
+-If the server recognizes your public key, it will allow you to connect without entering a password. The reason why this method is so popular is because it provides an extra layer of security over traditional password authentication.
+
+-Passwords can be stolen or hacked, but it is much more difficult for someone to access your private key file unless they physically have access to the device hosting the file itself. Using an SSH key pair simplifies the process of logging into remote servers while also increasing security.
+
+## Add Public Key via CLI:
+
+** ssh-copy-id user@remotehost:
+
+link -> https://www.tutorialspoint.com/how-to-generate-ssh-keys-on-ubuntu#:~:text=To%20generate%20an%20SSH%20key,ways%20to%20enable%20secure%20authentication.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

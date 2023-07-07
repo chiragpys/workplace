@@ -1,0 +1,102 @@
+## Authentication methods secure the communication between a server and a client. They're also used to make a server trust a request sent by an authorized user over the internet.
+
+
+## session:
+-> A session is a small file that stores the information about the user (user ID, login and expiration time, and more). The session is created and stored in the server when we log in.
+
+# How does session-based authentication work?
+-Here's the basic flow of session-based authentication:
+
+-The user (browser) sends a request to the server. The request contains the credentials of the user and the info it is requesting.
+-The web server authenticates the user. It creates a session, stores the information in a database, and returns a sessionId to the user.
+-This sessionId is stored in browser cookies. The next time the user requests, it sends the cookies in the HTTP header.
+-The web server looks at its sessionId and checks if it has any information. sessionId.
+-If the sessionId is valid, the web server authenticates the user and returns the requested information.
+
+
+
+## Token-based authentication:
+-> A token is an authorization file that can store all the user information in an encrypted format. This token can be stored on the client-side. The user sends the token to the server with every new request so that the server can verify its signature and authorize the requests.
+
+# How does token-based authentication work:
+-> Here's the basic flow of token-based authentication:
+
+-The client sends a request to the server with their credentials.
+-The application validates the credentials and generates a secure, signed token for the client
+-The token is sent back to the client and stored there.
+-When the client needs to access something new on the server, it sends the token through the HTTP header.
+-The server decodes and verifies the attached token. If it is valid, the server sends a response to the client.
+-The token is destroyed when the client logs out.
+
+-> The main difference between the session and token authentication is that the authentication details are stored on the server side in session authentication and on the user side in token authentication. Token authentication is more secure than session authentication because a token cannot be tampered with. Both methods have inherent vulnerabilities which can be resolved. So, it is on the developer to decide as to which method he wants to adopt based on his needs.
+
+https://www.educative.io/answers/session-based-authentication-vs-token-based-authentication
+
+
+
+
+##JWT:
+
+-> A JSON web token(JWT) is JSON Object which is used to securely transfer information over the web(between two parties). It can be used for an authentication system and can also be used for information exchange.The token is mainly composed of header, payload, signature. These three parts are separated by dots(.). JWT defines the structure of information we are sending from one party to the another, and it comes in two forms – Serialized, Deserialized. The Serialized approach is mainly used to transfer the data through the network with each request and response. While the deserialized approach is used to read and write data to the web token.
+
+-> JWT in the deserialized form contains only the header and the payload.Both of them are plain JSON objects.
+
+# Header:
+-> A header in a JWT is mostly used to describe the cryptographic operations applied to the JWT like signing/decryption technique used on it. It can also contain the data about the media/content type of the information we are sending.This information is present as a JSON object then this JSON object is encoded to BASE64URL. The cryptographic operations in the header define whether the JWT is signed/unsigned or encrypted and are so then what algorithm techniques to use. A simple header of a JWT looks like the code below:
+
+ {
+    "typ":"JWT",
+    "alg":"HS256"
+ }
+
+-The ‘alg’ and ‘typ’ are object key’s having different values and different functions like the ‘typ’ gives us the type of the header this information packet is, whereas the ‘alg’ tells us about the encryption algorithm used.
+
+Note: HS256 and RS256 are the two main algorithms we make use of in the header section of a JWT.
+
+# Payload:
+
+-> The payload is the part of the JWT where all the user data is actually added. This data is also referred to as the ‘claims’ of the JWT.This information is readable by anyone so it is always advised to not put any confidential information in here. This part generally contains user information. This information is present as a JSON object then this JSON object is encoded to BASE64URL. We can put as many claims as we want inside a payload, though unlike header, no claims are mandatory in a payload. The JWT with the payload will look something like this:
+
+ {
+     "userId":"b07f85be-45da",
+     "iss": "https://provider.domain.com/",
+     "sub": "auth/some-hash-here",
+     "exp": 153452683
+ }
+
+-The above JWT contains userId,iss,sub,and exp. All these play a different role as userId is the ID of the user we are storing, ‘iss’ tells us about the issuer, ‘sub’ stands for subject, and ‘exp’ stands for expiration date.
+
+
+-JWT in the serialized form represents a string of the following format:
+[header].[payload].[signature]
+
+
+# Signature:
+
+This is the third part of JWT and used to verify the authenticity of token. BASE64URL encoded header and payload are joined together with dot(.) and it is then hashed using the hashing algorithm defined in a header with a secret key. This signature is then appended to header and payload using dot(.) which forms our actual token header.payload.signature.
+
+JWT Example:
+
+{
+  "alg" : "HS256",
+
+  "typ" : "JWT"
+}
+
+Payload:
+
+{
+  "id" : 123456789,
+
+  "name" : "Joseph"
+}
+
+Secret: GeeksForGeeks
+
+# JSON Web Token:
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIzNDU2Nzg5LCJuYW1lIjoiSm9zZXBoIn0.OpOSSw7e485LOP5PrzScxHb7SR6sAOMRckfFwi4rp7o.
+
+
+https://jwt.io/introduction
+https://www.geeksforgeeks.org/json-web-token-jwt/
+
